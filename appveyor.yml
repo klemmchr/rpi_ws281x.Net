@@ -1,0 +1,19 @@
+version: 1.0.{build}
+image: Ubuntu1804
+dotnet_csproj:
+  patch: true
+  file: '**\*.csproj'
+  version: '{version}'
+  package_version: '{version}'
+  assembly_version: '{version}'
+  file_version: '{version}'
+  informational_version: '{version}'
+before_build:
+  - cmd: dotnet --version
+  - cmd: dotnet restore ./src/ws281x.Net/ws281x.Net.csproj --verbosity m
+build_script:
+- pwsh: dotnet pack -c Release -o ./src/ws281x.Net/bin/nuget --include-symbols --include-source --runtime=linux-arm ./src/ws281x.Net/ws281x.Net.csproj
+artifacts:
+ - path: '/src/ws281x.Net/bin/nuget/*.nupkg'
+   name: NuGet
+   type: NuGetPackage
