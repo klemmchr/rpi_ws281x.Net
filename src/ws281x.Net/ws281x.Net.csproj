@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <PackageLicenseUrl>https://raw.githubusercontent.com/chris579/rpi_ws281x.Net/master/LICENSE</PackageLicenseUrl>
+    <PackageLicenseUrl>https://github.com/chris579/rpi_ws281x.Net/blob/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/chris579/rpi_ws281x.Net</PackageProjectUrl>
     <RepositoryUrl>https://github.com/chris579/rpi_ws281x.Net</RepositoryUrl>
     <PackageTags>rpi, ws281x, ws2811</PackageTags>
