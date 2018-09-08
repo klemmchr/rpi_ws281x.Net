@@ -14,7 +14,7 @@ namespace ws281x.Net.Model
         /// <returns>The 24 bit RGB representation.</returns>
         public static uint ToRgb(this Color color)
         {
-            return ((uint)color.A << 24) | ((uint)color.R << 16) | ((uint)color.G << 8) | color.B;
+            return ((uint) color.A << 24) | ((uint) color.R << 16) | ((uint) color.G << 8) | color.B;
         }
     }
 }

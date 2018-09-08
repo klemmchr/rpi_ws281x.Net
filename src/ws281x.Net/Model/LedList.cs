@@ -6,10 +6,10 @@ namespace ws281x.Net.Model
     /// <summary>
     ///     Represents a list allowing access to all leds of a channel.
     /// </summary>
-    public class LedList: IDisposable
+    public class LedList : IDisposable
     {
-        private bool _disposing;
         private readonly ws2811_channel_t _channel;
+        private bool _disposing;
 
         /// <summary>
         ///     Initializes a new instance <see cref="LedList" /> instance.
@@ -18,6 +18,16 @@ namespace ws281x.Net.Model
         public LedList(ws2811_channel_t channel)
         {
             _channel = channel;
+        }
+
+        /// <inheritdoc />
+        public void Dispose()
+        {
+            if (_disposing)
+                return;
+
+            _disposing = true;
+            _channel?.Dispose();
         }
 
         /// <summary>
@@ -38,16 +48,6 @@ namespace ws281x.Net.Model
         public void SetColor(int pos, Color color)
         {
             rpi_ws281x.ws2811_led_set(_channel, pos, color.ToRgb());
-        }
-        
-        /// <inheritdoc />
-        public void Dispose()
-        {
-            if(_disposing)
-                return;
-
-            _disposing = true;
-            _channel?.Dispose();
         }
     }
 }
