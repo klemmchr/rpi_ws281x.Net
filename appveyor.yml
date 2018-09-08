@@ -12,7 +12,7 @@ before_build:
   - cmd: dotnet --version
   - cmd: dotnet restore ./src/ws281x.Net/ws281x.Net.csproj --verbosity m
 build_script:
-- pwsh: dotnet pack -c Release -o ./src/ws281x.Net/bin/nuget --include-symbols --include-source --runtime=linux-arm ./src/ws281x.Net/ws281x.Net.csproj
+- pwsh: dotnet pack -c Release -o ./bin/nuget --include-symbols --include-source --runtime=linux-arm ./src/ws281x.Net/ws281x.Net.csproj
 artifacts:
  - path: '/src/ws281x.Net/bin/nuget/*.nupkg'
    name: NuGet
