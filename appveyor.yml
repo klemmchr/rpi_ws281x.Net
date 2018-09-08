@@ -1,5 +1,5 @@
 version: 1.0.{build}
-image: Ubuntu1804
+image: Visual Studio 2017
 dotnet_csproj:
   patch: true
   file: '**\*.csproj'
